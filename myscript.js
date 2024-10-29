@@ -34,46 +34,78 @@ function getHumanChoice(){
 let humanScore = 0;
 let computerScore = 0;
 
+
 // playRound function  paper -> rock
 //                           -> scissors   rock -> paper
 //                                              -> scissors   
 //                                                  
 
 function playRound(humanChoice, computerChoice) {
+    let compIsWinner = false;
+    let userIsWinner = false;
     if (humanChoice === "rock" && computerChoice === "paper"){
+        compIsWinner = true;
         computerScore ++;
-        return "You lose! Paper beats Rock"
+        console.log("You lose! Paper beats Rock", humanScore, computerScore);
     }
     else if (humanChoice === "rock" && computerChoice === "scissors"){
         humanScore ++;
-        return "You winnnnnnnnnnn, rock beats scissors"
+        userIsWinner = true;
+        console.log("You winnnnnnnnnnn, rock beats scissors", humanScore, computerScore);
     }
     else if (humanChoice === "paper" && computerChoice === "rock"){
         humanScore ++;
-        return "You winnnnnnnnnnn, Paper beats Rock"
+        userIsWinner = true;
+        console.log("You winnnnnnnnnnn, Paper beats Rock", humanScore, computerScore);
     }
     else if (humanChoice === "scissors" && computerChoice === "paper"){
         humanScore ++;
-        return "You winnnnnnnnnnn, scissors beats paper"
+        userIsWinner = true;
+        console.log("You winnnnnnnnnnn, scissors beats paper", humanScore, computerScore);
     }
     else if (humanChoice === "paper" && computerChoice === "scissors"){
         computerScore ++;
-        return "You lose, scissors beats paper"
+        compIsWinner = true;
+        console.log("You lose, scissors beats paper", humanScore, computerScore);
     }
     else if (humanChoice === "scissors" && computerChoice === "rock"){
         computerScore ++;
-        return "You lose, rock beats scissors"
+        compIsWinner = true;
+        console.log("You lose, rock beats scissors", humanScore, computerScore);
     }
+    
 
   }
   
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
-  
- console.log(playRound(humanSelection, computerSelection));
 
+/* playGame function:  loop (5times) 
+                      that call playground each 
+                      if computerScore > humanScore (you lose)
+                      else ( you win congrats)
+ 
 
+*/ 
 
+function playGame(){
+
+    
+   //console.log(playRound(humanSelection, computerSelection));
+    for (let i = 0; i < 5; i++) {
+        humanSelection = getHumanChoice();
+        computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
+
+    if (humanScore > computerScore){
+        console.log("congrats !!!!!!!!!!! you win! ");
+    }
+    else {
+        console.log("you lose, bye bye");
+    }
+
+}
+
+playGame();
 
 
 
