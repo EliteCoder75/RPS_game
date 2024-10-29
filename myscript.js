@@ -19,26 +19,20 @@ function getComputerChoice(){
     }
 }
 
-console.log(getComputerChoice());
-
-
-
-
-
-
 
 
 // human_choice -> given a user, having a prompt, take his input and store it 
 
-/*function getHumanChoice(){
-
-
+function getHumanChoice(){
+    let u = prompt("What's your choice between the follwing : rock, paper, scissors ?");
+    return u.toLowerCase();
 }
-*/
+
 
 // keep track of user and computer scores in vars humanScore, computerScore initialzed to 0
 
-
+let humanScore = 0;
+let computerScore = 0;
 
 /*function playRound(humanChoice, computerChoice) {
     // your code here!
