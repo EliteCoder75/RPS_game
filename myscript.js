@@ -62,6 +62,34 @@ function playRound(humanChoice, computerChoice) {
 
   }
 
+  /*const buttons = document.querySelectorAll("button");
+
+  // we use the .forEach method to iterate through each button
+  buttons.forEach((button) => {
+    // and for each one we add a 'click' listener
+    
+    button.addEventListener("click", function () {
+        console.log(button.id);
+      });
+  });
+*/
+
+//const rock = document.querySelector("#rock");
+
+/*const rock = document.getElementById(rock);
+const paper = document.getElementById(paper);
+const scissors = document.getElementById(scissors);
+
+function alertFunction(name) {
+    console.log(name.id);
+  }
+*/
+//rock.onclick = alertFunction();
+
+
+
+
+
 function playGame(){
     
    //console.log(playRound(humanSelection, computerSelection));
@@ -84,6 +112,8 @@ function playGame(){
 }
 
 playGame();
+
+
 
 
 
