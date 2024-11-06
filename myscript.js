@@ -101,65 +101,19 @@ function Click_function_core (name){
             li.textContent = result; 
             list.append(li);}
 
+
 function event_listener (name){
     if (name) {
         name.addEventListener('click', function() {
-            if  ((humanScore < 3) && (computerScore < 3)){
+            if  ((humanScore < 5) && (computerScore < 5)){
                 Click_function_core (name);}
-
+            else if (humanScore > computerScore){
+                alert("congrats !!!!!!!!!!! you win! ");
+            }
+            else {
+                alert("you lose, bye bye");
+            }
           });
     }
 }
            
-
-//const rock = document.querySelector("#rock");
-/*const rock = document.getElementById("rock");
-rock.addEventListener("click", function() {
-    // add your JavaScript code here
-    alert("Button clicked!");
-  });*/
-/*function logID() {
-    console.log(this.id);
-  }*/
-
-
-/*const rockk = document.querySelector(rock);
-const paperr = document.getElementById(paper);
-const scissorss = document.getElementById(scissors);
-
-function alertFunction() {
-    console.log(this);
-  }
-*/
-//rock.onclick = alertFunction();
-
-
-
-/*function playGame(){
-    
-   //console.log(playRound(humanSelection, computerSelection));
-    do {
-        console.log("human", humanScore);
-        console.log("computer", computerScore);
-        humanSelection = getHumanChoice();
-        computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-    } while ((humanScore < 3) && (computerScore < 3));
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-    if (humanScore > computerScore){
-        console.log("congrats !!!!!!!!!!! you win! ");
-    }
-    else {
-        console.log("you lose, bye bye");
-    }
-
-}
-
-playGame();*/
-
-
-
-
-
-
-  
