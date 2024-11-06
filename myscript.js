@@ -87,26 +87,10 @@ window.addEventListener("DOMContentLoaded", (event) => {
     
     const list = document.getElementById('list');
     
-    if (rock) {
-        rock.addEventListener('click', function() {
-            if  ((humanScore < 3) && (computerScore < 3)){
-                Click_function_core (rock);}
-
-          });
-    }
-
-    if (paper) {
-        paper.addEventListener('click', function() {
-          if  ((humanScore < 3) && (computerScore < 3)){
-            Click_function_core (paper);
-       }});
-      }
-    
-    if (scissors) {
-        scissors.addEventListener('click', function() {
-            if  ((humanScore < 3) && (computerScore < 3)){
-                Click_function_core (scissors);}});
-      }       
+    event_listener(rock);
+    event_listener(paper);
+    event_listener(scissors);
+     
 });
 
 function Click_function_core (name){
@@ -117,7 +101,15 @@ function Click_function_core (name){
             li.textContent = result; 
             list.append(li);}
 
+function event_listener (name){
+    if (name) {
+        name.addEventListener('click', function() {
+            if  ((humanScore < 3) && (computerScore < 3)){
+                Click_function_core (name);}
 
+          });
+    }
+}
            
 
 //const rock = document.querySelector("#rock");
