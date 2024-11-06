@@ -34,69 +34,121 @@ let computerScore = 0;
                                               
 
 function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice){
+        return "same choice, play again !!"
+    }
+
     if (humanChoice === "rock" && computerChoice === "paper"){
         computerScore ++;
-        console.log("You lose! Paper beats Rock", humanScore, computerScore);
+        let message = "You lose! Paper beats Rock " + humanScore + ', ' +computerScore;
+        //console.log(message);
+        return message;
+        //return console.log("You lose! Paper beats Rock", humanScore, computerScore);
     }
     else if (humanChoice === "rock" && computerChoice === "scissors"){
         humanScore ++;
-        console.log("You winnnnnnnnnnn, rock beats scissors", humanScore, computerScore);
+        let message = "You winnnnnnnnnnn, rock beats scissors " + humanScore + ', ' +computerScore;
+        //console.log(message);
+        return message;
+        //return console.log("You winnnnnnnnnnn, rock beats scissors", humanScore, computerScore);
     }
     else if (humanChoice === "paper" && computerChoice === "rock"){
         humanScore ++;
-        console.log("You winnnnnnnnnnn, Paper beats Rock", humanScore, computerScore);
+        let message = "You winnnnnnnnnnn, Paper beats Rock " + humanScore + ', ' +computerScore;
+        return message;
+        //return console.log("You winnnnnnnnnnn, Paper beats Rock", humanScore, computerScore);
     }
     else if (humanChoice === "paper" && computerChoice === "scissors"){
         computerScore ++;
-        console.log("You lose, scissors beats paper", humanScore, computerScore);
+        let message = "You lose, scissors beats paper " + humanScore + ', ' +computerScore;
+        return message;
+        //return console.log("You lose, scissors beats paper", humanScore, computerScore);
     }
     else if (humanChoice === "scissors" && computerChoice === "paper"){
         humanScore ++;
-        console.log("You winnnnnnnnnnn, scissors beats paper", humanScore, computerScore);
+        let message = "You winnnnnnnnnnn, scissors beats paper " + humanScore + ', ' +computerScore;
+        return message;
+        //return console.log("You winnnnnnnnnnn, scissors beats paper", humanScore, computerScore);
     }
     else if (humanChoice === "scissors" && computerChoice === "rock"){
         computerScore ++;
-        console.log("You lose, rock beats scissors", humanScore, computerScore);
+        let message = "You lose, rock beats scissors " + humanScore + ', ' +computerScore;
+        return message;
     }
     
 
   }
 
-  /*const buttons = document.querySelectorAll("button");
 
-  // we use the .forEach method to iterate through each button
-  buttons.forEach((button) => {
-    // and for each one we add a 'click' listener
+window.addEventListener("DOMContentLoaded", (event) => {
+    const rock = document.getElementById('rock');
+    const paper = document.getElementById('paper');
+    const scissors = document.getElementById('scissors');
     
-    button.addEventListener("click", function () {
-        console.log(button.id);
-      });
-  });
-*/
+    const list = document.getElementById('list');
+    
+    if (rock) {
+        rock.addEventListener('click', function() {
+            if  ((humanScore < 3) && (computerScore < 3)){
+                Click_function_core (rock);}
+
+          });
+    }
+
+    if (paper) {
+        paper.addEventListener('click', function() {
+          if  ((humanScore < 3) && (computerScore < 3)){
+            Click_function_core (paper);
+       }});
+      }
+    
+    if (scissors) {
+        scissors.addEventListener('click', function() {
+            if  ((humanScore < 3) && (computerScore < 3)){
+                Click_function_core (scissors);}});
+      }       
+});
+
+function Click_function_core (name){
+    let compchoice = getComputerChoice();
+            const result = playRound(name.id, compchoice);
+            console.log(result);
+            const li = document.createElement('li');
+            li.textContent = result; 
+            list.append(li);}
+
+
+           
 
 //const rock = document.querySelector("#rock");
+/*const rock = document.getElementById("rock");
+rock.addEventListener("click", function() {
+    // add your JavaScript code here
+    alert("Button clicked!");
+  });*/
+/*function logID() {
+    console.log(this.id);
+  }*/
 
-/*const rock = document.getElementById(rock);
-const paper = document.getElementById(paper);
-const scissors = document.getElementById(scissors);
 
-function alertFunction(name) {
-    console.log(name.id);
+/*const rockk = document.querySelector(rock);
+const paperr = document.getElementById(paper);
+const scissorss = document.getElementById(scissors);
+
+function alertFunction() {
+    console.log(this);
   }
 */
 //rock.onclick = alertFunction();
 
 
 
-
-
-function playGame(){
+/*function playGame(){
     
    //console.log(playRound(humanSelection, computerSelection));
     do {
         console.log("human", humanScore);
         console.log("computer", computerScore);
-
         humanSelection = getHumanChoice();
         computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
@@ -111,7 +163,7 @@ function playGame(){
 
 }
 
-playGame();
+playGame();*/
 
 
 
